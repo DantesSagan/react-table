@@ -13,8 +13,15 @@ export default function BasicTable() {
     columns,
     data,
   });
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    tableInstance;
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    footerGroups,
+    rows,
+    prepareRow,
+  } = tableInstance;
+  
   return (
     <table {...getTableProps()}>
       {/* <thead>
@@ -22,7 +29,10 @@ export default function BasicTable() {
           <th>Расписание на первую неделю обучения</th>
         </tr>
       </thead> */}
-      <thead>
+      <thead
+      // style={{ position: 'fixed' }}
+      className="nav"
+      >
         {headerGroups.map((headerGroups) => (
           <tr {...headerGroups.getHeaderGroupProps()}>
             {headerGroups.headers.map((column) => (
@@ -45,6 +55,15 @@ export default function BasicTable() {
           );
         })}
       </tbody>
+      <tfoot>
+        {footerGroups.map((footerGroups) => (
+          <tr {...footerGroups.getFooterGroupProps()}>
+            {footerGroups.headers.map((column) => (
+              <td {...column.getFooterProps}>{column.render('Footer')}</td>
+            ))}
+          </tr>
+        ))}
+      </tfoot>
     </table>
   );
 }
