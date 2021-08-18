@@ -10,7 +10,8 @@ table {
   width: 100%;
 }
 table td,
-table th {
+table th,
+table tfoot {
   border: 1px solid #ddd;
   padding: 8px;
 }

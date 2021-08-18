@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useTable } from 'react-table';
 
 import MOCK_DATA from './MOCK_DATA.json';
-import { COLUMNS } from './columns';
+import { COLUMNS, GROUP_COLUMNS } from './columns';
 
 import './table.css';
 
@@ -21,7 +21,7 @@ export default function BasicTable() {
     rows,
     prepareRow,
   } = tableInstance;
-  
+
   return (
     <table {...getTableProps()}>
       {/* <thead>
@@ -30,15 +30,14 @@ export default function BasicTable() {
         </tr>
       </thead> */}
       <thead
-      // style={{ position: 'fixed' }}
-      className="nav"
+        // style={{ position: 'fixed' }}
+        className='nav'
       >
         {headerGroups.map((headerGroups) => (
           <tr {...headerGroups.getHeaderGroupProps()}>
             {headerGroups.headers.map((column) => (
               <th {...column.getHeaderProps()}>{column.render('Header')}</th>
             ))}
-            <th></th>
           </tr>
         ))}
       </thead>
@@ -50,16 +49,17 @@ export default function BasicTable() {
               {row.cells.map((cell) => {
                 return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
               })}
-              <td></td>
             </tr>
           );
         })}
       </tbody>
-      <tfoot>
+      <tfoot >
         {footerGroups.map((footerGroups) => (
           <tr {...footerGroups.getFooterGroupProps()}>
             {footerGroups.headers.map((column) => (
-              <td {...column.getFooterProps}>{column.render('Footer')}</td>
+              <td
+              style={{  backgroundColor: '#04aa6d'}}
+              {...column.getFooterProps()}>{column.render('Footer')}</td>
             ))}
           </tr>
         ))}
