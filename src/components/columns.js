@@ -1,3 +1,5 @@
+import ColumnFilter from './ColumnFilter'
+
 export const COLUMNS = [
   {
     Header: 'Id',
@@ -45,11 +47,13 @@ export const GROUP_COLUMNS = [
             Header: 'Дата/число',
             Footer: 'Дата/число',
             accessor: 'date',
+            Filter: ColumnFilter,
           },
           {
             Header: 'Часы',
             Footer: 'Last Name',
             accessor: 'hours',
+            Filter: ColumnFilter,
           },
         ],
       },
@@ -61,11 +65,13 @@ export const GROUP_COLUMNS = [
             Header: 'Предметы',
             Footer: 'Предметы',
             accessor: 'lessons',
+            Filter: ColumnFilter,
           },
           {
             Header: 'Аудитория',
             Footer: 'Аудитория',
             accessor: 'room',
+            Filter: ColumnFilter,
           },
         ],
       },

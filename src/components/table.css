@@ -13,7 +13,7 @@ table td,
 table th,
 table tfoot {
   border: 1px solid #ddd;
-  padding: 8px;
+  padding: 8px; 
 }
 
 table tr:nth-child(even) {
@@ -35,5 +35,5 @@ table tfoot {
 
 table td {
   padding: 14px;
-  
+
 }
