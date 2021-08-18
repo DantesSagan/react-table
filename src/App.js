@@ -1,10 +1,16 @@
+import FilteringTable from './components/FilteringTable';
+
+// import BasicTable from './components/BasicTable';
+// import SortingTable from './components/SortingTable';
+
 import './App.css';
-import  BasicTable  from './components/BasicTable';
 
 export default function App() {
   return (
     <div className='App'>
-      <BasicTable />
+      {/* <SortingTable />
+       */}
+      <FilteringTable />
     </div>
   );
 }
